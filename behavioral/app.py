@@ -4,7 +4,7 @@ from behavioral.implementation.factory_check import FactoryOwner
 
 
 def if_subscribe(factory_accountant, person):
-    val = input("Do you want to subscribe to block's updates? ").lower()
+    val = input("Subscribe for automated notifications").lower()
     if val == "yes" or val == "y":
         factory_accountant.attach(person)
 
