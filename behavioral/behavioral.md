@@ -29,16 +29,16 @@ This kind of interaction is also known as publish-subscribe. The subject is the 
      - knows its observers. Any number of Observer objects may observe a subject.
      - provides an interface for attaching and detaching Observer objects.
 * Observer
- - defines an updating interface for objects that should be notified of changes in a subject.
+      - defines an updating interface for objects that should be notified of changes in a subject.
 
 * ConcreteSubject
- - stores state of interest to ConcreteObserver objects.
- - sends a notification to its observers when its state changes.
+      - stores state of interest to ConcreteObserver objects.
+      - sends a notification to its observers when its state changes.
 
 * ConcreteObserver
- - maintains a reference to a ConcreteSubject object.
- - stores state that should stay consistent with the subject's.
- - implements the Observer updating interface to keep its state consistent with the subject's.
+      - maintains a reference to a ConcreteSubject object.
+      - stores state that should stay consistent with the subject's.
+      - implements the Observer updating interface to keep its state consistent with the subject's.
 
 ## Implementation:
 #### Observer
