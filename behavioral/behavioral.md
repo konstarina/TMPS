@@ -86,7 +86,7 @@ def notify(self, event):
         event = accountant.factory + " is a new accountant\n" #created an accountant
         self.notify(event)
 ```
-Here is the process how a factory director is notified of current events in owner.py:
+Here is the process how a factory director is notified of current events in owner.py by updating the subscriber's state :
 ```python
 from behavioral.abstractions.publisher import Publisher
 from creational.builder import MilkaDirector
