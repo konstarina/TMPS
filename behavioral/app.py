@@ -12,8 +12,8 @@ def if_subscribe(factory_accountant, person):
 if __name__ == "__main__":
     factory_check = FactoryOwner()
     while True:
-        print("Introduce 1 for moving in to the building")
-        print("Introduce 2 to register as administrator")
+        print("Print yes if a revenue service came this quarter")
+        print("Print no to assign an accountant for this deal")
 
         val = int(input())
         factory = input("Your factory name: ")
