@@ -18,6 +18,28 @@
  - [x] Publisher
  - [ ] Strategy
 
+## Introduction:
+### Motivation
+A common side-effect of partitioning a system into a collection of cooperating classes is the need to maintain consistency between related objects. You don't want to achieve consistency by making the classes tightly coupled, because that reduces their reusability.
+The Observer pattern describes how to establish communication relationships. The key objects in this pattern are **subject** and **observer**. A subject may have any number of dependent observers. All observers are notified whenever the subject undergoes a change in state. In response, each observer will query the subject to synchronize its state with the subject's state.
+
+This kind of interaction is also known as publish-subscribe. The subject is the publisher of notifications. It sends out these notifications without having to know who its observers are. Any number of observers can subscribe to receive notifications.
+### Needed entities
+* Subject
+     - knows its observers. Any number of Observer objects may observe a subject.
+     - provides an interface for attaching and detaching Observer objects.
+* Observer
+ - defines an updating interface for objects that should be notified of changes in a subject.
+
+* ConcreteSubject
+ - stores state of interest to ConcreteObserver objects.
+ - sends a notification to its observers when its state changes.
+
+* ConcreteObserver
+ - maintains a reference to a ConcreteSubject object.
+ - stores state that should stay consistent with the subject's.
+ - implements the Observer updating interface to keep its state consistent with the subject's.
+
 ## Implementation:
 #### Observer
 The observer pattern is a software design pattern in which an object, called the subject or observable, manages a list of dependents, called observers, and notifies them automatically of any internal state changes, and calls one of their methods.
@@ -44,7 +66,7 @@ class Publisher(ABCMeta):
 ```
 The classical ones: Observable(Subscriber) and Observers(Publisher)
 
-## How it works for my system
+## How it works for my system:
 Previously, I have implemented Chocolate Factory and Stores where all the products are created, stored, and sold in Creational DP. Later, there was also implemented Bussiness Model for the owners of the factory and stores in Structural DP. Now I added to CDP a notifiying system, where the accountants of the business are created, notified when the revenue service comes and when it is needed to pay the bills in the file factory_check.py : 
 ```python
 def notify(self, event):
@@ -79,11 +101,11 @@ class Owner(Publisher):
     def update(self, subscriber):
         print("The " + self.factory + " was notified. " + subscriber)
 ```
-The result:
+## The result:
 
 ![](main.png)
 
-## Conclusion
+## Conclusion:
 
 The Observer pattern has many advantages and benefits:
 The Observer pattern lets you vary subjects and observers independently. You can reuse subjects without reusing their observers, and vice versa. It lets you add observers without modifying the subject or other observers.
